@@ -3,6 +3,9 @@ package solutionscorp.barbershop.Models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Table(name = "professional")
 @Entity
 public class Professional {
@@ -18,19 +21,19 @@ public class Professional {
     @Column(name = "last_name")
     String lastName;
 
-    @OneToOne(mappedBy = "professional", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Schedule schedule;
+    @OneToMany(mappedBy = "professional", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Schedule> schedules = new ArrayList<>();
 
     //no args constructor
     public Professional() {
     }
 
     //all args constructor
-    public Professional(int professionalId, String name, String lastName, Schedule schedule) {
+    public Professional(int professionalId, String name, String lastName, List<Schedule> schedules) {
         this.professionalId = professionalId;
         this.name = name;
         this.lastName = lastName;
-        this.schedule = schedule;
+        this.schedules = schedules;
     }
 
     //setters & getters
@@ -58,11 +61,11 @@ public class Professional {
         this.lastName = lastName;
     }
 
-    public Schedule getSchedule() {
-        return schedule;
+    public List<Schedule> getSchedules() {
+        return schedules;
     }
 
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
     }
 }

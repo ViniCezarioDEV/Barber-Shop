@@ -18,7 +18,7 @@ public class Schedule {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "professional_id")
     private Professional professional;
 
