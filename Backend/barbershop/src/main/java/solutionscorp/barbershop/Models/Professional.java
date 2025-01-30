@@ -13,13 +13,13 @@ public class Professional {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "professional_id")
-    private int professionalId;
+    private Integer professionalId;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "last_name")
-    String lastName;
+    private String lastName;
 
     @OneToMany(mappedBy = "professional", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Schedule> schedules = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Professional {
     }
 
     //all args constructor
-    public Professional(int professionalId, String name, String lastName, List<Schedule> schedules) {
+    public Professional(Integer professionalId, String name, String lastName, List<Schedule> schedules) {
         this.professionalId = professionalId;
         this.name = name;
         this.lastName = lastName;
@@ -37,11 +37,11 @@ public class Professional {
     }
 
     //setters & getters
-    public int getProfessionalId() {
+    public Integer getProfessionalId() {
         return professionalId;
     }
 
-    public void setProfessionalId(int professionalId) {
+    public void setProfessionalId(Integer professionalId) {
         this.professionalId = professionalId;
     }
 

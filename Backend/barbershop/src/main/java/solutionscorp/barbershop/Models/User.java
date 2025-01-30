@@ -12,7 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private int userId;
+    private Integer userId;
 
     @Column(name = "name")
     private String name;
@@ -26,7 +26,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Schedule> schedules = new HashSet<>();
 
 
@@ -35,7 +35,7 @@ public class User {
     }
 
     //all args constructor
-    public User(int userId, String name, String lastName, String email, String password) {
+    public User(Integer userId, String name, String lastName, String email, String password) {
         this.userId = userId;
         this.name = name;
         this.lastName = lastName;

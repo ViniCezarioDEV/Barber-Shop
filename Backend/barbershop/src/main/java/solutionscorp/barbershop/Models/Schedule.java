@@ -12,7 +12,7 @@ public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "schedule_id")
-    private int scheduleId;
+    private Integer scheduleId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -22,9 +22,9 @@ public class Schedule {
     @JoinColumn(name = "professional_id")
     private Professional professional;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "service_id")
-    private Service service;
+    @ManyToOne
+    @JoinColumn(name = "barber_service_id")
+    private BarberService barberService;
 
     @Column(name = "date")
     private LocalDate date;
@@ -37,11 +37,11 @@ public class Schedule {
     }
 
     //all args constructor
-    public Schedule(int scheduleId, User user, Professional professional, Service service, LocalDate date, LocalTime time) {
+    public Schedule(Integer scheduleId, User user, Professional professional, BarberService barberService, LocalDate date, LocalTime time) {
         this.scheduleId = scheduleId;
         this.user = user;
         this.professional = professional;
-        this.service = service;
+        this.barberService = barberService;
         this.date = date;
         this.time = time;
     }
@@ -71,12 +71,12 @@ public class Schedule {
         this.professional = professional;
     }
 
-    public Service getService() {
-        return service;
+    public BarberService getBarberService() {
+        return barberService;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setBarberService(BarberService barberService) {
+        this.barberService = barberService;
     }
 
     public LocalDate getDate() {

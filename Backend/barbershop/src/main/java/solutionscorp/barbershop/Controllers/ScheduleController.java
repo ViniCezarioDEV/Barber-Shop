@@ -29,6 +29,7 @@ public class ScheduleController {
     // make a schedule
     @PostMapping("/book")
     public ResponseEntity<String> bookSchedule(@RequestBody ScheduleDTO scheduleDTO) {
+        System.out.println("Received professionalId: " + scheduleDTO.getProfessional().getProfessionalId());
         scheduleService.bookSchedule(scheduleDTO);
         return ResponseEntity.ok("Scheduling completed successfully");
     }
