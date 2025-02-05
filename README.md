@@ -15,6 +15,7 @@ This simple project, simule a barber shop system.
 - [Frontend Phase](#frontend)
     - [Test Index file](#fetf)
     - [Schedule Index file](#fets)
+    - [All HTML base files](#fecb)
 
 
 <h2 id="database">Database Phase</h2>  
@@ -92,7 +93,13 @@ At this phase, I created a simple Index.html file, to test Schedule endpoints.
 
 <h3 id="fets">Test Schedule index file</h3>
 
-(01/30/2025) - MM/DD/YYYY
+(01/30/2025) - MM/DD/YYYY<br>
 Here, I created a test file to see, how my requests working on
 
 - [Click here to see schedule index test file](https://github.com/ViniCezarioDEV/Barber-Shop/blob/main/Frontend/Test/makeSchedule.html)
+
+<h3 id="fecb">All base files</h3>
+
+Here, I created all HTML base files, with Javascript and CSS. But in the future, it may be i've to change the Javascript
+
+- [Click here to see these files](https://github.com/ViniCezarioDEV/Barber-Shop/blob/main/Frontend/barbershop/)

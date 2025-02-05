@@ -82,9 +82,8 @@ public class ScheduleService {
                 );
 
         if (existingSchedule.isPresent()) {
-            throw new RuntimeException("Already a schedule for this service, date and time.");
+            throw new RuntimeException("Already a schedule for this date and time.");
         }
-
 
 
         // Saving Schedule on database

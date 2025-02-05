@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop | Schedule</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <body>
+        <h1>Make a schedule</h1>
+        <form id="scheduleForm">
+            <div>
+                <label for="userId">User ID</label>
+                <input type="number" id="userId" name="userId" required>
+            </div>
+            <div>
+                <label for="professionalId">Professional ID</label>
+                <input type="number" id="professionalId" name="professionalId" required>
+            </div>
+            <div>
+                <label for="serviceId">Service ID</label>
+                <input type="number" id="barberServiceId" name="barberServiceId" required>
+            </div>
+            <div>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <button type="submit">Schedule</button>
+        </form>
+    
+        <p id="responseMessage"></p>
+    
+        <script src="js/makeSchedule.js"></script>
+    </body>
+</body>
+</html>
